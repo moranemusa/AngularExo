@@ -1,0 +1,15 @@
+<h1>Liste des quizzes ({{quizList.length}})</h1>
+
+<div class="row">
+  <p>
+    <button class="btn btn-default" (click)="quizList.push({title: 'bob'})">Ajouter</button>
+    <button class="btn btn-default" (click)="quizList.pop()">Supprimer</button>
+  </p>
+  <h2 *ngIf="quizList.length === 0">
+    AUCUN QUIZ TROUVE
+  </h2>
+  <!-- Premier quiz -->
+  <div class="col-sm-6" *ngFor="let currentQuiz of quizList; let position=index">
+    <app-quiz-item [num]="position" [quiz]="currentQuiz"></app-quiz-item>
+  </div>
+</div>

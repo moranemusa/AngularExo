@@ -1,0 +1,35 @@
+<div class="row">
+
+  <div class="col-md-8">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Question</h3>
+      </div>
+      <div class="panel-body">
+        <p style="font-size:1.5em;">{{question.title}}</p>
+        <p *ngIf="question.multipleChoicesAllowed">(Plusieurs réponses possibles.)</p>
+      </div>
+      <div class="list-group">
+        <a class="list-group-item" *ngFor="let choice of question.choices" (click)="clickChoice(choice)" [class.active]="answer.hasChoice(choice)">
+          <h4 class="list-group-item-heading">{{choice.text}}</h4>
+        </a>
+        <!--a class="list-group-item">
+          <h4 class="list-group-item-heading">{{question}}</h4>
+        </a>
+        <a class="list-group-item">
+          <h4 class="list-group-item-heading">QUESTION_CHOICE_3</h4>
+        </a-->
+        <div class="list-group-item pull-right">
+          <button class="btn btn-lg" [ngClass]="submitClass" (click)="submitAnswer()" [disabled]="!answer.isAnswered() || isSubmitted">
+            {{submitLabel}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isSubmitted && !answer.isCorrect">
+      La bonne réponse était : {{question.getCorrectChoices()}}
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+<h3>{{ pageTitle }}</h3>
+
+<!-- new quiz -->
+<p>
+  <a routerLink="new" class="btn btn-default">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouveau Quiz
+  </a>
+</p>
+
+<!-- quiz list -->
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Titre</th>
+    <th>Actions</th>
+    <th>Questions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let quiz of quizzes">
+    <td>{{ quiz.title }}</td>
+    <td>
+      <a [routerLink]="['/quiz', quiz.id]" class="btn btn-default btn-sm" target="_blank">
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Voir
+      </a>
+      <a [routerLink]="[quiz.id]" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Éditer
+      </a>
+      <button class="btn btn-danger btn-sm" (click)="deleteQuiz(quiz)">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+      </button>
+    </td>
+    <td>
+      <a [routerLink]="[quiz.id, 'questions']" class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Gérer les questions
+      </a>
+    </td>
+  </tr>
+  </tbody>
+</table>

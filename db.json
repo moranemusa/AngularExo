@@ -1,0 +1,224 @@
+{
+  "quizzes": [
+    {
+      "id": 32,
+      "title": "Quiz Angular 2 (général)",
+      "description": "Questions d'ordre général sur Angular 2.",
+      "questions": [
+        {
+          "id": 12,
+          "title": "En quelle année AngularJS (première version) est-il sorti ?",
+          "choices": [
+            {
+              "text": "2008"
+            },
+            {
+              "text": "2009",
+              "isCorrect": true
+            },
+            {
+              "text": "2012"
+            },
+            {
+              "text": "2014"
+            }
+          ],
+          "explanation": "La version de 2009 est celle développé initialement par Miško Hevery, qui ne travaillait pas encore chez Google."
+        },
+        {
+          "id": 24,
+          "title": "Quels langages de programmation sont supportés par Angular ?",
+          "choices": [
+            {
+              "text": "JavaScript",
+              "isCorrect": true
+            },
+            {
+              "text": "TypeScript",
+              "isCorrect": true
+            },
+            {
+              "text": "VBScript"
+            },
+            {
+              "text": "PHP"
+            },
+            {
+              "text": "Python"
+            },
+            {
+              "text": "Dart",
+              "isCorrect": true
+            }
+          ],
+          "explanation": "Même si plusieurs langages sont supportés, le plus utilisé et de loin est TypeScript."
+        },
+        {
+          "id": 35,
+          "title": "Angular est vraiment trop canon.",
+          "choices": [
+            {
+              "text": "Vrai",
+              "isCorrect": true
+            },
+            {
+              "text": "Faux"
+            }
+          ],
+          "explanation": "À ce stade, comment ne pas en être persuadé ? 😝"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "title": "Quiz TypeScript",
+      "description": "Connaissez-vous vraiment le langage TypeScript ?",
+      "questions": [
+        {
+          "id": 45,
+          "title": "Tout code JavaScript valide est également du TypeScript valide.",
+          "choices": [
+            {
+              "text": "Vrai",
+              "isCorrect": true
+            },
+            {
+              "text": "Faux"
+            }
+          ],
+          "explanation": "Vrai. Le langage TypeScript est un *surensemble* du langage JavaScript. Cela signifie qu'il augmente le langage JavaScript classique en lui ajoutant de nouvelles fonctionnalités comme les types et les annotations."
+        },
+        {
+          "id": 28,
+          "title": "TypeScript est un langage qui a été développé spécifiquement pour Angular.",
+          "choices": [
+            {
+              "text": "Vrai"
+            },
+            {
+              "text": "Faux",
+              "isCorrect": true
+            }
+          ],
+          "explanation": "Faux. Le langage TypeScript a été développé par Microsoft, mais il est libre et open-source. C'est seulement à partir de la version 2 que Angular a commencé à supporter TypeScript."
+        },
+        {
+          "id": 19,
+          "title": "Le code TypeScript peut être exécuté directement dans un navigateur web, comme JavaScript.",
+          "choices": [
+            {
+              "text": "Vrai"
+            },
+            {
+              "text": "Faux",
+              "isCorrect": true
+            }
+          ],
+          "explanation": "Faux. TypeScript n'est pas supporté nativement par les navigateurs. Il doit d'abord être compilé en JavaScript (on dit \"transpiler\") avant de pouvoir être exécuté dans un navigateur."
+        }
+      ]
+    },
+    {
+      "id": 568,
+      "title": "Quiz Module",
+      "description": "Que sont les modules Angular et à quoi servent-ils ?",
+      "questions": [
+        {
+          "id": 1,
+          "title": "Tout fichier de code TypeScript est un module Angular. Le mot \"module\" est synonyme de \"fichier\".",
+          "choices": [
+            {
+              "text": "Vrai"
+            },
+            {
+              "text": "Faux",
+              "isCorrect": true
+            }
+          ],
+          "explanation": "Faux. Vous confondez les modules TypeScript (1 fichier = 1 module) et les modules Angular (module = classe décorée avec @NgModule)."
+        },
+        {
+          "id": 2,
+          "title": "Toute application Angular possède au moins un module.",
+          "choices": [
+            {
+              "text": "Vrai",
+              "isCorrect": true
+            },
+            {
+              "text": "Faux"
+            }
+          ],
+          "explanation": "Vrai. Par convention, il s'agit du module racine, appelé AppModule par convention."
+        },
+        {
+          "id": 3,
+          "title": "Dans la liste ci-dessous, sélectionnez les propriétés qu'on peut trouver dans le décorateur @NgModule().",
+          "choices": [
+            {
+              "text": "imports",
+              "isCorrect": true
+            },
+            {
+              "text": "exportAs"
+            },
+            {
+              "text": "declarations",
+              "isCorrect": true
+            },
+            {
+              "text": "provide"
+            },
+            {
+              "text": "providers",
+              "isCorrect": true
+            }
+          ],
+          "explanation": "Les propriétés exportAs et provide ne sont pas correctes."
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Capitales européennes",
+      "description": "Testez vos connaissances en géographie grâce à ce quiz endiablé."
+    },
+    {
+      "id": 500,
+      "title": "Séries TV",
+      "description": "Alors comme ça Game of Thrones n\"a pas de secrets pour vous ?"
+    },
+    {
+      "id": 569,
+      "title": "ddsd",
+      "description": "",
+      "canRetryQuestion": false,
+      "questions": [
+        {
+          "multipleChoicesAllowed": false,
+          "id": 1,
+          "questionType": "multiple_choice",
+          "title": "Q1",
+          "explanation": "expl",
+          "choices": [
+            {
+              "text": "A",
+              "isCorrect": false
+            },
+            {
+              "text": "B",
+              "isCorrect": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "submissions": [],
+  "users": [
+    {
+      "name": "toto",
+      "password": "1234"
+    }
+  ]
+}

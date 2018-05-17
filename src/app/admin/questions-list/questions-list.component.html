@@ -1,0 +1,86 @@
+<h3>Gérer les questions du quiz</h3>
+
+<p><a routerLink="/admin/quiz">Revenir à la liste des quizzes</a></p>
+
+<!-- save all -->
+<p class="text-right">
+  <button class="btn btn-lg"
+          [ngClass]="hasPendingChanges ? 'btn-warning' : 'btn-default'"
+          [disabled]="!hasPendingChanges"
+          (click)="saveQuiz()">
+    <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> Enregistrer
+  </button>
+</p>
+
+<!-- new question -->
+<p *ngIf="!isEditMode">
+  <button class="btn btn-default" (click)="addNewQuestion()">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouvelle question
+  </button>
+</p>
+
+<!-- question form to edit new or existing questions -->
+<app-question-form
+    *ngIf="isEditMode"
+    [question]="questionInEdition"
+    (onCancelEdit)="cancelEdit()"
+    (onSubmitQuestion)="addQuestion($event)"></app-question-form>
+
+<ng-template #noQuestions>
+  <div class="alert alert-info" role="alert" >
+    <p>Ce quiz n'a pas de questions pour l'instant.</p>
+  </div>
+</ng-template>
+
+<!-- question list -->
+<table class="table table-striped" *ngIf="quiz && quiz.questions.length > 0; else noQuestions">
+  <thead>
+  <tr>
+    <th>Position</th>
+    <th>Actions</th>
+    <th>Type</th>
+    <th>Question</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let question of quiz.questions; let isFirst=first; let isLast=last;">
+    <td class="col-md-2">
+      <button class="btn btn-default btn-sm"
+              (click)="moveQuestionUp(question)"
+              [disabled]="isFirst">
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+      </button>
+      <button class="btn btn-default btn-sm"
+              (click)="moveQuestionDown(question)"
+              [disabled]="isLast">
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+      </button>
+    </td>
+    <td class="col-md-2">
+      <button class="btn btn-default btn-sm" title="Éditer"
+              (click)="editQuestion(question)">
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+      </button>
+      <button class="btn btn-danger btn-sm" title="Supprimer"
+              (click)="deleteQuestion(question)">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      </button>
+    </td>
+    <td class="col-md-2">
+      {{ question.questionType }}
+    </td>
+    <td>
+      {{ question.title }}
+      <ul>
+        <li *ngFor="let choice of question.choices">
+          <span [hidden]="!choice.isCorrect">[X]</span>
+          {{ choice.text }}
+        </li>
+      </ul>
+      <p *ngIf="question.explanation"><em>{{ question.explanation }}</em></p>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<pre>{{debug|json}}</pre>

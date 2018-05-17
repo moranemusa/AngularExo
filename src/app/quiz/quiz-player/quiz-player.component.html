@@ -1,0 +1,14 @@
+<ng-container *ngIf="currentQuiz | async">
+<h2>{{(currentQuiz | async).title}}</h2>
+<p>{{(currentQuiz | async).description}}</p>
+</ng-container>
+<p *ngIf="!isStarted; else showNavQuestion">
+  <button class="btn btn-info btn-lg"(click)="startQuiz()">
+    Démarrer le quiz
+  </button>
+</p>
+<ng-template #showNavQuestion>
+<app-quiz-nav [quiz]="currentQuiz | async" [question]="currentQuestion | async" [answers]="currentAnswers | async" (next)='gotoNextQuestion()' (previous)='gotoPreviousQuestion()'></app-quiz-nav>
+
+<app-quiz-question [question]="currentQuestion | async" [answer]="currentAnswer | async" (submit)="validation($event)"></app-quiz-question>
+</ng-template>
