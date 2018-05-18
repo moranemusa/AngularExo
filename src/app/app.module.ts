@@ -12,19 +12,21 @@ import { LoginComponent } from './common/login/login.component';
 import { QuizListComponent } from './quiz/quiz-list/quiz-list.component';
 import { QuizPlayerComponent } from './quiz/quiz-player/quiz-player.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   // Routes de l'application
-  { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule' },
+  { path: 'admin', loadChildren: 'app/admin/admin.module#AdminModule', canActivate: [AuthGuard]},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, FooterComponent, LoginComponent],
   imports: [BrowserModule, QuizModule, RouterModule.forRoot(routes), HttpClientModule],
-  providers: [{ provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004'}],
+  providers: [{ provide: 'JSON_SERVER_URL', useValue: 'http://localhost:3004'}, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
