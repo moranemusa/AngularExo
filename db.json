@@ -2,72 +2,10 @@
   "quizzes": [
     {
       "id": 32,
-      "title": "Quiz Angular 2 (général)",
+      "title": "Quiz Angular 2",
       "description": "Questions d'ordre général sur Angular 2.",
-      "questions": [
-        {
-          "id": 12,
-          "title": "En quelle année AngularJS (première version) est-il sorti ?",
-          "choices": [
-            {
-              "text": "2008"
-            },
-            {
-              "text": "2009",
-              "isCorrect": true
-            },
-            {
-              "text": "2012"
-            },
-            {
-              "text": "2014"
-            }
-          ],
-          "explanation": "La version de 2009 est celle développé initialement par Miško Hevery, qui ne travaillait pas encore chez Google."
-        },
-        {
-          "id": 24,
-          "title": "Quels langages de programmation sont supportés par Angular ?",
-          "choices": [
-            {
-              "text": "JavaScript",
-              "isCorrect": true
-            },
-            {
-              "text": "TypeScript",
-              "isCorrect": true
-            },
-            {
-              "text": "VBScript"
-            },
-            {
-              "text": "PHP"
-            },
-            {
-              "text": "Python"
-            },
-            {
-              "text": "Dart",
-              "isCorrect": true
-            }
-          ],
-          "explanation": "Même si plusieurs langages sont supportés, le plus utilisé et de loin est TypeScript."
-        },
-        {
-          "id": 35,
-          "title": "Angular est vraiment trop canon.",
-          "choices": [
-            {
-              "text": "Vrai",
-              "isCorrect": true
-            },
-            {
-              "text": "Faux"
-            }
-          ],
-          "explanation": "À ce stade, comment ne pas en être persuadé ? 😝"
-        }
-      ]
+      "canRetryQuestion": false,
+      "questions": []
     },
     {
       "id": 99,
@@ -212,6 +150,69 @@
           ]
         }
       ]
+    },
+    {
+      "id": 571,
+      "title": "",
+      "description": "",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 572,
+      "title": "",
+      "description": "",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 573,
+      "title": "eerrer",
+      "description": "eeee",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 574,
+      "title": "",
+      "description": "",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 575,
+      "title": "",
+      "description": "",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 576,
+      "title": "Quiz Angular 2 ",
+      "description": "Questions d'ordre général sur Angular 2.",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 577,
+      "title": "Quiz Angular 2 ",
+      "description": "Questions d'ordre général sur Angular 2.",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 578,
+      "title": "tttttttttttttttt",
+      "description": "",
+      "canRetryQuestion": false,
+      "questions": []
+    },
+    {
+      "id": 579,
+      "title": "ee",
+      "description": "ee",
+      "canRetryQuestion": false,
+      "questions": []
     }
   ],
   "submissions": [],

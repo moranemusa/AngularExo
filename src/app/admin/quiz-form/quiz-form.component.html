@@ -1,21 +1,41 @@
-<form novalidate>
+<form novalidate [formGroup]="quizForm" (ngSubmit)="createQuiz()">
 
-  <div class="form-group">
+
+  <app-field label="Titre*" [control]="quizForm.get('title')">
+    <input type="text" class="form-control" placeholder="Titre" formControlName="title">
+  </app-field>
+
+  <!--div class="form-group" [class.has-error]="quizForm.get('title').invalid && quizForm.get('title').dirty" >
     <label class="control-label">Titre*</label>
-    <input type="text" class="form-control" placeholder="Titre">
-  </div>
+    <input type="text" class="form-control" placeholder="Titre" formControlName="title">
+    <div class="help-block" *ngIf="quizForm.get('title').invalid && quizForm.get('title').dirty">
+      <p *ngIf="quizForm.get('title').hasError('required')">Ce champs est obligatoire</p>
+      <p *ngIf="quizForm.get('title').hasError('maxlength')">
+        Ce champs ne doit pas dépasser {{quizForm.get('title').getError('maxlength').requiredLength}} caractere
+      (actuellement: {{quizForm.get('title').getError('maxlength').actualLength}})
+      </p>
+      
+     </div>
+  </div-->
+  <app-field label="Description" [control]="quizForm.get('description')">
+      <textarea class="form-control" placeholder="Description" rows="3" formControlName="description"></textarea>
+    </app-field>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label class="control-label">Description</label>
-    <textarea class="form-control" placeholder="Description" rows="3"></textarea>
-  </div>
+    <textarea class="form-control" placeholder="Description" rows="3" formControlName="description"></textarea>
+  </div> -->
 
-  <div class="form-group">
+  <app-field label="Peut ré-essayer les questions" [control]="quizForm.get('CanRetryQuestion')">
+      <input type="checkbox" formControlName="CanRetryQuestion">
+    </app-field>
+
+  <!-- <div class="form-group">
     <label class="control-label">Peut ré-essayer les questions</label>
-    <input type="checkbox">
-  </div>
+    <input type="checkbox" formControlName="CanRetryQuestion">
+  </div> -->
 
-  <button type="submit" class="btn btn-primary">Enregistrer</button>
+  <button type="submit" class="btn btn-primary" [disabled]="quizForm.invalid">Enregistrer</button>
   <a routerLink="..">Annuler</a>
 
 </form>

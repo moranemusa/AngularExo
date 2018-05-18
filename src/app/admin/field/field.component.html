@@ -1,0 +1,13 @@
+<div class="form-group" [class.has-error]="control.invalid && control.dirty" >
+    <label class="control-label">{{label}}</label>
+    <ng-content></ng-content>
+    <!--input type="text" class="form-control" placeholder="Titre" formControlName="title"-->
+    <div class="help-block" *ngIf="control.invalid && control.dirty">
+      <p *ngIf="control.hasError('required')">Ce champs est obligatoire</p>
+      <p *ngIf="control.hasError('maxlength')">
+        Ce champs ne doit pas dépasser {{control.getError('maxlength').requiredLength}} caractere
+      (actuellement: {{control.getError('maxlength').actualLength}})
+      </p>
+      
+     </div>
+  </div>
